@@ -34,6 +34,7 @@ public class MqReceiver {
                 String text = null;
                 try {
                     text = ((TextMessage) message).getText();
+                    message.acknowledge();
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }
